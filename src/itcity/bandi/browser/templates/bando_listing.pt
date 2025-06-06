@@ -1,0 +1,65 @@
+<!-- src/itcity/bandi/browser/templates/bando_listing.pt -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      i18n:domain="itcity.bandi">
+
+<div class="bando-listing-item" 
+     tal:define="item_url item/absolute_url;
+                 item_title item/Title;
+                 item_description item/Description">
+  
+  <div class="row">
+    <!-- Immagine -->
+    <div class="col-md-3" tal:condition="item/immagine_anteprima">
+      <div class="bando-listing-image">
+        <a tal:attributes="href item_url">
+          <img tal:define="scale item/@@images"
+               tal:replace="structure python:scale.tag('immagine_anteprima', width=200, height=150, css_class='img-responsive')" />
+        </a>
+      </div>
+    </div>
+    
+    <!-- Contenuto -->
+    <div tal:attributes="class python:'col-md-9' if item.immagine_anteprima else 'col-md-12'">
+      <div class="bando-listing-content">
+        <!-- Titolo -->
+        <h3 class="bando-listing-title">
+          <a tal:attributes="href item_url" tal:content="item_title">Titolo del Bando</a>
+        </h3>
+        
+        <!-- Tipologia -->
+        <div class="bando-listing-meta" tal:condition="item/tipologia_bando">
+          <span class="badge badge-primary" tal:content="item/tipologia_bando">Tipologia</span>
+        </div>
+        
+        <!-- Descrizione -->
+        <p class="bando-listing-description" tal:condition="item_description" 
+           tal:content="item_description">Descrizione del bando</p>
+        
+        <!-- Date importanti -->
+        <div class="bando-listing-dates">
+          <small class="text-muted">
+            <span tal:condition="item/data_apertura">
+              <strong i18n:translate="">Apertura:</strong>
+              <span tal:content="python:item.data_apertura.strftime('%d/%m/%Y')">Data apertura</span>
+            </span>
+            <span tal:condition="item/data_scadenza" class="ml-3">
+              <strong i18n:translate="">Scadenza:</strong>
+              <span tal:content="python:item.data_scadenza.strftime('%d/%m/%Y %H:%M')">Data scadenza</span>
+            </span>
+          </small>
+        </div>
+        
+        <!-- Link di dettaglio -->
+        <div class="bando-listing-actions mt-2">
+          <a tal:attributes="href item_url" 
+             class="btn btn-primary btn-sm" 
+             i18n:translate="">Visualizza dettagli</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

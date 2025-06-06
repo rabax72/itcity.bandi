@@ -1,20 +1,11 @@
 <configure
     xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
     xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
     xmlns:i18n="http://namespaces.zope.org/i18n"
-    xmlns:plone="http://namespaces.plone.org/plone"
     i18n_domain="itcity.bandi">
 
   <i18n:registerTranslations directory="locales" />
-
-  <!--
-    Be careful if you use general includeDependencies, it can have side effects!
-    Better import explicit packages or configurations ;)
-  -->
-  <!--<includeDependencies package="." />-->
-
-  <!-- has to be loaded before permissions are used, so keep above views aso. -->
-  <include file="permissions.zcml" />
 
   <include package=".browser" />
 
@@ -25,7 +16,7 @@
       description="Installs the itcity.bandi add-on."
       provides="Products.GenericSetup.interfaces.EXTENSION"
       post_handler=".setuphandlers.post_install"
-      />
+  />
 
   <genericsetup:registerProfile
       name="uninstall"
@@ -34,13 +25,36 @@
       description="Uninstalls the itcity.bandi add-on."
       provides="Products.GenericSetup.interfaces.EXTENSION"
       post_handler=".setuphandlers.uninstall"
-      />
+  />
 
   <utility
-      factory=".setuphandlers.HiddenProfiles"
+      component=".setuphandlers.HiddenProfiles"
+      provides="Products.GenericSetup.interfaces.IProfileRegistry"
       name="itcity.bandi-hiddenprofiles"
-      />
+  />
 
-  <!-- -*- extra stuff goes here -*- -->
+  <!-- Content type registration -->
+  <class class=".content.bando.Bando">
+    <implements interface="plone.dexterity.interfaces.IDexterityContent" />
+  </class>
+
+  <!-- Vocabulary registrations -->
+  <utility
+      component=".vocabularies.tipologie_bando_vocabulary"
+      provides="zope.schema.interfaces.IVocabularyFactory"
+      name="itcity.bandi.tipologie_bando"
+  />
+
+  <utility
+      component=".vocabularies.destinatari_bando_vocabulary"
+      provides="zope.schema.interfaces.IVocabularyFactory"
+      name="itcity.bandi.destinatari_bando"
+  />
+
+  <utility
+      component=".vocabularies.enti_bando_vocabulary"
+      provides="zope.schema.interfaces.IVocabularyFactory"
+      name="itcity.bandi.enti_bando"
+  />
 
 </configure>

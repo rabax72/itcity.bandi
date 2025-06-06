@@ -1,0 +1,124 @@
+<!-- src/itcity/bandi/browser/templates/bando_view.pt -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="itcity.bandi">
+
+<body>
+  <metal:content-core fill-slot="content-core">
+    <div class="bando-view">
+      
+      <!-- Immagine di anteprima -->
+      <div class="bando-image" tal:condition="context/immagine_anteprima">
+        <img tal:define="scale context/@@images"
+             tal:replace="structure python:scale.tag('immagine_anteprima', width=800, height=400, css_class='img-responsive')" />
+        <p class="image-caption" tal:condition="context/didascalia_immagine" 
+           tal:content="context/didascalia_immagine">Didascalia</p>
+      </div>
+
+      <!-- Informazioni principali -->
+      <div class="bando-main-info">
+        <div class="row">
+          <div class="col-md-8">
+            <!-- Descrizione -->
+            <div class="bando-description" tal:condition="context/description">
+              <h3 i18n:translate="">Descrizione</h3>
+              <p tal:content="context/description">Descrizione del bando</p>
+            </div>
+
+            <!-- Testo -->
+            <div class="bando-text" tal:condition="context/testo">
+              <h3 i18n:translate="">Dettagli</h3>
+              <div tal:content="structure context/testo/output">Testo del bando</div>
+            </div>
+
+            <!-- Ulteriori informazioni -->
+            <div class="bando-additional-info" tal:condition="context/ulteriori_informazioni">
+              <h3 i18n:translate="">Ulteriori informazioni</h3>
+              <div tal:content="structure context/ulteriori_informazioni/output">Ulteriori informazioni</div>
+            </div>
+
+            <!-- Note di aggiornamento -->
+            <div class="bando-update-notes" tal:condition="context/note_aggiornamento">
+              <h3 i18n:translate="">Note di aggiornamento</h3>
+              <p tal:content="context/note_aggiornamento">Note di aggiornamento</p>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <!-- Sidebar con informazioni tecniche -->
+            <div class="bando-sidebar">
+              
+              <!-- Tipologia -->
+              <div class="bando-info-item" tal:condition="context/tipologia_bando">
+                <h4 i18n:translate="">Tipologia</h4>
+                <p tal:content="view/get_tipologia_display">Tipologia</p>
+              </div>
+
+              <!-- Destinatari -->
+              <div class="bando-info-item" tal:condition="view/get_destinatari_display">
+                <h4 i18n:translate="">Destinatari</h4>
+                <ul>
+                  <li tal:repeat="destinatario view/get_destinatari_display"
+                      tal:content="destinatario">Destinatario</li>
+                </ul>
+              </div>
+
+              <!-- Enti -->
+              <div class="bando-info-item" tal:condition="view/get_enti_display">
+                <h4 i18n:translate="">Enti</h4>
+                <ul>
+                  <li tal:repeat="ente view/get_enti_display"
+                      tal:content="ente">Ente</li>
+                </ul>
+              </div>
+
+              <!-- Date importanti -->
+              <div class="bando-dates">
+                <h4 i18n:translate="">Date importanti</h4>
+                
+                <div class="date-item" tal:condition="context/data_apertura">
+                  <strong i18n:translate="">Apertura:</strong>
+                  <span tal:content="python:context.data_apertura.strftime('%d/%m/%Y %H:%M')">Data apertura</span>
+                </div>
+
+                <div class="date-item" tal:condition="context/termine_chiarimenti">
+                  <strong i18n:translate="">Termine chiarimenti:</strong>
+                  <span tal:content="python:context.termine_chiarimenti.strftime('%d/%m/%Y %H:%M')">Termine chiarimenti</span>
+                </div>
+
+                <div class="date-item" tal:condition="context/data_scadenza">
+                  <strong i18n:translate="">Scadenza:</strong>
+                  <span tal:content="python:context.data_scadenza.strftime('%d/%m/%Y %H:%M')">Data scadenza</span>
+                </div>
+
+                <div class="date-item" tal:condition="context/data_chiusura_procedimento">
+                  <strong i18n:translate="">Chiusura procedimento:</strong>
+                  <span tal:content="python:context.data_chiusura_procedimento.strftime('%d/%m/%Y')">Data chiusura</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contenuti correlati (file allegati, etc.) -->
+      <div class="bando-attachments" tal:condition="context/objectIds">
+        <h3 i18n:translate="">Allegati</h3>
+        <div class="attachments-list">
+          <div tal:repeat="item context/objectValues">
+            <a tal:attributes="href item/absolute_url"
+               tal:content="item/Title">Nome file</a>
+            <span tal:condition="item/Description" 
+                  tal:content="string: - ${item/Description}">Descrizione</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </metal:content-core>
+</body>
+</html>

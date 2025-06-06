@@ -1,0 +1,220 @@
+# locales/it/LC_MESSAGES/itcity.bandi.po
+
+msgid ""
+msgstr ""
+"Project-Id-Version: itcity.bandi\n"
+"POT-Creation-Date: 2025-06-06 12:00+0000\n"
+"PO-Revision-Date: 2025-06-06 12:00+0000\n"
+"Language-Code: it\n"
+"Language-Name: Italiano\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: itcity.bandi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. Default: "Bando"
+msgid "Bando"
+msgstr "Bando"
+
+#. Default: "Un bando pubblico"
+msgid "A public tender"
+msgstr "Un bando pubblico"
+
+#. Default: "Testo"
+msgid "Testo"
+msgstr "Testo"
+
+#. Default: "Testo completo del bando"
+msgid "Complete text of the tender"
+msgstr "Testo completo del bando"
+
+#. Default: "Tipologia di Bando"
+msgid "Tipologia di Bando"
+msgstr "Tipologia di Bando"
+
+#. Default: "Seleziona la tipologia del bando"
+msgid "Select the type of tender"
+msgstr "Seleziona la tipologia del bando"
+
+#. Default: "Destinatari"
+msgid "Destinatari"
+msgstr "Destinatari"
+
+#. Default: "Seleziona i destinatari del bando"
+msgid "Select the recipients of the tender"
+msgstr "Seleziona i destinatari del bando"
+
+#. Default: "Ente"
+msgid "Ente"
+msgstr "Ente"
+
+#. Default: "Seleziona gli enti coinvolti"
+msgid "Select the involved entities"
+msgstr "Seleziona gli enti coinvolti"
+
+#. Default: "Data di apertura"
+msgid "Data di apertura"
+msgstr "Data di apertura"
+
+#. Default: "Data e ora di apertura del bando"
+msgid "Opening date and time of the tender"
+msgstr "Data e ora di apertura del bando"
+
+#. Default: "Termine per la richiesta di chiarimenti"
+msgid "Termine per la richiesta di chiarimenti"
+msgstr "Termine per la richiesta di chiarimenti"
+
+#. Default: "Data e ora limite per richiedere chiarimenti"
+msgid "Deadline for requesting clarifications"
+msgstr "Data e ora limite per richiedere chiarimenti"
+
+#. Default: "Data e ora di scadenza"
+msgid "Data e ora di scadenza"
+msgstr "Data e ora di scadenza"
+
+#. Default: "Data e ora di scadenza del bando"
+msgid "Expiration date and time of the tender"
+msgstr "Data e ora di scadenza del bando"
+
+#. Default: "Data chiusura procedimento"
+msgid "Data chiusura procedimento"
+msgstr "Data chiusura procedimento"
+
+#. Default: "Data di chiusura del procedimento"
+msgid "Procedure closing date"
+msgstr "Data di chiusura del procedimento"
+
+#. Default: "Ulteriori informazioni"
+msgid "Ulteriori informazioni"
+msgstr "Ulteriori informazioni"
+
+#. Default: "Informazioni aggiuntive sul bando"
+msgid "Additional information about the tender"
+msgstr "Informazioni aggiuntive sul bando"
+
+#. Default: "Note di aggiornamento"
+msgid "Note di aggiornamento"
+msgstr "Note di aggiornamento"
+
+#. Default: "Note relative agli aggiornamenti del bando"
+msgid "Notes about tender updates"
+msgstr "Note relative agli aggiornamenti del bando"
+
+#. Default: "Immagine di anteprima"
+msgid "Immagine di anteprima"
+msgstr "Immagine di anteprima"
+
+#. Default: "Immagine rappresentativa del bando"
+msgid "Representative image of the tender"
+msgstr "Immagine rappresentativa del bando"
+
+#. Default: "Didascalia immagine di anteprima"
+msgid "Didascalia immagine di anteprima"
+msgstr "Didascalia immagine di anteprima"
+
+#. Default: "Didascalia per l'immagine di anteprima"
+msgid "Caption for the preview image"
+msgstr "Didascalia per l'immagine di anteprima"
+
+# Vocabulary terms
+#. Default: "Servizi"
+msgid "Servizi"
+msgstr "Servizi"
+
+#. Default: "Forniture"
+msgid "Forniture"
+msgstr "Forniture"
+
+#. Default: "Lavori"
+msgid "Lavori"
+msgstr "Lavori"
+
+#. Default: "Alienazioni"
+msgid "Alienazioni"
+msgstr "Alienazioni"
+
+#. Default: "Avvisi pubblici"
+msgid "Avvisi pubblici"
+msgstr "Avvisi pubblici"
+
+#. Default: "Concorso"
+msgid "Concorso"
+msgstr "Concorso"
+
+#. Default: "Cittadini"
+msgid "Cittadini"
+msgstr "Cittadini"
+
+#. Default: "Imprese"
+msgid "Imprese"
+msgstr "Imprese"
+
+#. Default: "Enti locali"
+msgid "Enti locali"
+msgstr "Enti locali"
+
+#. Default: "Associazioni"
+msgid "Associazioni"
+msgstr "Associazioni"
+
+#. Default: "Altro"
+msgid "Altro"
+msgstr "Altro"
+
+#. Default: "Authority Stu"
+msgid "Authority Stu"
+msgstr "Authority Stu"
+
+#. Default: "It.City s.p.a."
+msgid "It.City s.p.a."
+msgstr "It.City s.p.a."
+
+#. Default: "Parma Infrastrutture"
+msgid "Parma Infrastrutture"
+msgstr "Parma Infrastrutture"
+
+#. Default: "Regione Emilia Romagna"
+msgid "Regione Emilia Romagna"
+msgstr "Regione Emilia Romagna"
+
+# View terms
+#. Default: "Descrizione"
+msgid "Descrizione"
+msgstr "Descrizione"
+
+#. Default: "Dettagli"
+msgid "Dettagli"
+msgstr "Dettagli"
+
+#. Default: "Tipologia"
+msgid "Tipologia"
+msgstr "Tipologia"
+
+#. Default: "Enti"
+msgid "Enti"
+msgstr "Enti"
+
+#. Default: "Date importanti"
+msgid "Date importanti"
+msgstr "Date importanti"
+
+#. Default: "Apertura:"
+msgid "Apertura:"
+msgstr "Apertura:"
+
+#. Default: "Termine chiarimenti:"
+msgid "Termine chiarimenti:"
+msgstr "Termine chiarimenti:"
+
+#. Default: "Scadenza:"
+msgid "Scadenza:"
+msgstr "Scadenza:"
+
+#. Default: "Chiusura procedimento:"
+msgid "Chiusura procedimento:"
+msgstr "Chiusura procedimento:"
+
+#. Default: "Allegati"
+msgid "Allegati"
+msgstr "Allegati"

@@ -1,21 +1,20 @@
+<!-- src/itcity/bandi/browser/configure.zcml -->
 <configure
     xmlns="http://namespaces.zope.org/zope"
     xmlns:browser="http://namespaces.zope.org/browser"
     xmlns:plone="http://namespaces.plone.org/plone"
     i18n_domain="itcity.bandi">
 
-  <!-- Set overrides folder for Just-a-Bunch-Of-Templates product -->
-  <include package="z3c.jbot" file="meta.zcml" />
-  <browser:jbot
-      directory="overrides"
-      layer="itcity.bandi.interfaces.IItcityBandiLayer"
+  <!-- Vista per il content type Bando -->
+  <browser:page
+      name="view"
+      for="itcity.bandi.content.bando.IBando"
+      class=".bando_view.BandoView"
+      template="templates/bando_view.pt"
+      permission="zope2.View"
       />
 
-  <!-- Publish static files -->
-  <plone:static
-      name="itcity.bandi"
-      type="plone"
-      directory="static"
-      />
+  <!-- Include static resources -->
+  <include package=".static" />
 
 </configure>

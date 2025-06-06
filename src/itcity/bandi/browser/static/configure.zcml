@@ -1,0 +1,11 @@
+<!-- src/itcity/bandi/browser/static/configure.zcml -->
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser">
+
+  <browser:resourceDirectory
+      name="itcity.bandi"
+      directory="."
+      />
+
+</configure>

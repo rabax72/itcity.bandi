@@ -1,0 +1,132 @@
+/* src/itcity/bandi/browser/static/bando.css */
+
+.bando-view {
+    margin: 20px 0;
+}
+
+.bando-image {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.bando-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.image-caption {
+    font-style: italic;
+    color: #666;
+    margin-top: 10px;
+    font-size: 0.9em;
+}
+
+.bando-main-info {
+    margin-bottom: 30px;
+}
+
+.bando-sidebar {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #e9ecef;
+}
+
+.bando-info-item {
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.bando-info-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.bando-info-item h4 {
+    color: #2c3e50;
+    margin-bottom: 8px;
+    font-size: 1.1em;
+}
+
+.bando-info-item p,
+.bando-info-item ul {
+    margin-bottom: 0;
+}
+
+.bando-info-item ul {
+    padding-left: 20px;
+}
+
+.bando-dates {
+    background: #fff;
+    padding: 15px;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+}
+
+.bando-dates h4 {
+    color: #2c3e50;
+    margin-bottom: 15px;
+    font-size: 1.1em;
+}
+
+.date-item {
+    margin-bottom: 8px;
+    padding: 5px 0;
+}
+
+.date-item strong {
+    color: #34495e;
+    display: inline-block;
+    min-width: 120px;
+}
+
+.bando-attachments {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 2px solid #e9ecef;
+}
+
+.bando-attachments h3 {
+    color: #2c3e50;
+    margin-bottom: 15px;
+}
+
+.attachments-list {
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 6px;
+}
+
+.attachments-list div {
+    margin-bottom: 10px;
+    padding: 8px;
+    background: #fff;
+    border-radius: 4px;
+    border: 1px solid #e9ecef;
+}
+
+.attachments-list a {
+    font-weight: bold;
+    color: #007bff;
+    text-decoration: none;
+}
+
+.attachments-list a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .bando-sidebar {
+        margin-top: 30px;
+    }
+    
+    .date-item strong {
+        min-width: auto;
+        display: block;
+    }
+}

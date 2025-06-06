@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<registry xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+          i18n:domain="itcity.bandi">
+
+  <!-- Vocabulary registrations -->
+  <record name="itcity.bandi.tipologie_bando">
+    <field type="plone.registry.field.TextLine">
+      <title>Tipologie Bando Vocabulary</title>
+    </field>
+    <value>itcity.bandi.vocabularies.tipologie_bando_vocabulary</value>
+  </record>
+
+  <record name="itcity.bandi.destinatari_bando">
+    <field type="plone.registry.field.TextLine">
+      <title>Destinatari Bando Vocabulary</title>
+    </field>
+    <value>itcity.bandi.vocabularies.destinatari_bando_vocabulary</value>
+  </record>
+
+  <record name="itcity.bandi.enti_bando">
+    <field type="plone.registry.field.TextLine">
+      <title>Enti Bando Vocabulary</title>
+    </field>
+    <value>itcity.bandi.vocabularies.enti_bando_vocabulary</value>
+  </record>
+
+  <!-- CSS Resources -->
+  <records prefix="plone.resources/bando-css"
+           interface='Products.CMFPlone.interfaces.IResourceRegistry'>
+    <value key="css">
+      <element>++plone++itcity.bandi/bando.css</element>
+    </value>
+  </records>
+
+  <!-- Bundle configuration -->
+  <records prefix="plone.bundles/itcity-bandi"
+           interface='Products.CMFPlone.interfaces.IBundleRegistry'>
+    <value key="resources">
+      <element>bando-css</element>
+    </value>
+    <value key="enabled">True</value>
+    <value key="compile">True</value>
+    <value key="csscompilation">++plone++itcity.bandi/bando-compiled.css</value>
+    <value key="last_compilation"></value>
+  </records>
+
+</registry>

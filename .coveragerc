@@ -1,0 +1,6 @@
+[report]
+include =
+    src/itcity/*
+omit =
+    */test*
+    */upgrades/*

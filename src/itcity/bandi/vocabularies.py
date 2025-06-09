@@ -45,6 +45,7 @@ class EntiBandoVocabulary:
     def __call__(self, context):
         terms = [
             SimpleTerm(value="authority_stu", title=_("Authority Stu")),
+            SimpleTerm(value="comune_di_parma", title=_("Comune di Parma")),
             SimpleTerm(value="itcity_spa", title=_("It.City s.p.a.")),
             SimpleTerm(value="parma_infrastrutture", title=_("Parma Infrastrutture")),
             SimpleTerm(value="regione_emilia_romagna", title=_("Regione Emilia Romagna")),

@@ -49,19 +49,19 @@ class IBando(model.Schema):
     
     data_apertura = schema.Datetime(
         title=_("Data di apertura"),
-        description=_("Data e ora di apertura del bando"),
+        description=_("Data e ora dell'apertura del bando. Usa questo campo se vuoi impostare una data di apertura specifica. Se non impostato, il bando sarà aperto immediatamente."),
         required=False,
     )
     
     termine_chiarimenti = schema.Datetime(
         title=_("Termine per la richiesta di chiarimenti"),
-        description=_("Data e ora limite per richiedere chiarimenti"),
+        description=_("Data entro la quale sarà possibile far pervenire domande e richieste di chiarimento a chi eroga il bando"),
         required=False,
     )
     
     data_scadenza = schema.Datetime(
         title=_("Data e ora di scadenza"),
-        description=_("Data e ora di scadenza del bando"),
+        description=_("Scadenza dei termini per partecipare al bando"),
         required=False,
     )
     
@@ -73,13 +73,13 @@ class IBando(model.Schema):
     
     ulteriori_informazioni = RichText(
         title=_("Ulteriori informazioni"),
-        description=_("Informazioni aggiuntive sul bando"),
+        description=_("Ulteriori informazioni non previste negli altri campi; si può trattare di contatti o note informative la cui conoscenza è indispensabile per la partecipazione al bando"),
         required=False,
     )
     
     note_aggiornamento = schema.Text(
         title=_("Note di aggiornamento"),
-        description=_("Note relative agli aggiornamenti del bando"),
+        description=_("Inserisci una nota per indicare che il contenuto corrente è stato aggiornato. Questo testo può essere visualizzato nei blocchi elenco con determinati layout per informare gli utenti che un determinato contenuto è stato aggiornato. Ad esempio se in un bando sono stati aggiunti dei documenti."),
         required=False,
     )
     

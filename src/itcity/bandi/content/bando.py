@@ -8,8 +8,8 @@ from plone.schema import Email
 from plone.supermodel import model
 from z3c.form.browser.radio import RadioFieldWidget
 from zope import schema
-from zope.interface import implementer
-
+from zope.interface import implementer, invariant, Invalid
+from datetime import datetime, time
 from itcity.bandi import _
 
 
@@ -94,6 +94,49 @@ class IBando(model.Schema):
         description=_("Didascalia per l'immagine di anteprima"),
         required=False,
     )
+
+    @invariant
+    def validate_date_order(data):
+        d_apertura = data.data_apertura
+        d_chiarimenti = data.termine_chiarimenti
+        d_scadenza = data.data_scadenza
+        d_chiusura = data.data_chiusura_procedimento
+
+        # Converti la data di chiusura in datetime (aggiungendo mezzanotte)
+        if d_chiusura:
+            d_chiusura_dt = datetime.combine(d_chiusura, time.min)
+        else:
+            d_chiusura_dt = None
+
+        if d_apertura and d_chiarimenti:
+            if d_apertura > d_chiarimenti:
+                raise Invalid(
+                    _("La data di apertura deve essere precedente o uguale al termine per la richiesta di chiarimenti.")
+                )
+
+        if d_scadenza:
+            if d_chiarimenti and d_scadenza <= d_chiarimenti:
+                raise Invalid(
+                    _("La data di scadenza deve essere successiva al termine per la richiesta di chiarimenti.")
+                )
+            if d_apertura and d_scadenza <= d_apertura:
+                raise Invalid(
+                    _("La data di scadenza deve essere successiva alla data di apertura.")
+                )
+
+        if d_chiusura_dt:
+            if d_apertura and d_chiusura_dt <= d_apertura:
+                raise Invalid(
+                    _("La data di chiusura del procedimento deve essere successiva alla data di apertura.")
+                )
+            if d_chiarimenti and d_chiusura_dt <= d_chiarimenti:
+                raise Invalid(
+                    _("La data di chiusura del procedimento deve essere successiva al termine per la richiesta di chiarimenti.")
+                )
+            if d_scadenza and d_chiusura_dt <= d_scadenza:
+                raise Invalid(
+                    _("La data di chiusura del procedimento deve essere successiva alla data di scadenza.")
+                )
 
 
 @implementer(IBando)

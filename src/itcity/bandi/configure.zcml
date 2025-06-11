@@ -57,4 +57,11 @@
       name="itcity.bandi.enti_bando"
   />
 
+    <subscriber
+        for="plone.dexterity.interfaces.IDexterityContent
+            zope.lifecycleevent.interfaces.IObjectAddedEvent"
+        handler=".subscribers.create_subfolders_for_bando"
+    />
+    
+
 </configure>

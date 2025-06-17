@@ -18,6 +18,7 @@ class TipologieBandoVocabulary:
             SimpleTerm(value="lavori", title=_("Lavori")),
             SimpleTerm(value="alienazioni", title=_("Alienazioni")),
             SimpleTerm(value="avvisi_pubblici", title=_("Avvisi pubblici")),
+            SimpleTerm(value="avvisi_selezione", title=_("Avvisi di selezione")),
             SimpleTerm(value="concorso", title=_("Concorso")),
         ]
         return SimpleVocabulary(terms)
@@ -48,6 +49,7 @@ class EntiBandoVocabulary:
             SimpleTerm(value="comune_di_parma", title=_("Comune di Parma")),
             SimpleTerm(value="itcity_spa", title=_("It.City s.p.a.")),
             SimpleTerm(value="parma_infrastrutture", title=_("Parma Infrastrutture")),
+            SimpleTerm(value="parma_infanzia", title=_("ParmaInfanzia")),
             SimpleTerm(value="regione_emilia_romagna", title=_("Regione Emilia Romagna")),
         ]
         return SimpleVocabulary(terms)
